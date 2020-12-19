@@ -70,9 +70,11 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
-        CropImage.activity()
-                .setAspectRatio(1,1)
-                .start(PostActivity.this);
+
+        //Commented by Ajay
+//        CropImage.activity()
+//                .setAspectRatio(1,1)
+//                .start(PostActivity.this);
 
     }
 
