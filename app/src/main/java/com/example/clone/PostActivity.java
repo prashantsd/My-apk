@@ -73,6 +73,9 @@ public class PostActivity extends AppCompatActivity {
         CropImage.activity()
                 .setAspectRatio(1,1)
                 .start(PostActivity.this);
+//         CropImage.activity()
+//                 .setAspectRatio(1,1)
+//                 .start(PostActivity.this);
 
     }
 
@@ -89,7 +92,7 @@ public class PostActivity extends AppCompatActivity {
 
         if (imageUrl != null){
             final StorageReference filerefrence = storageReference.child(System.currentTimeMillis()
-            + "."+ getFileExtension(imageUrl));
+                    + "."+ getFileExtension(imageUrl));
 
             uploadTask = filerefrence.putFile(imageUrl);
             uploadTask.continueWithTask(new Continuation() {
