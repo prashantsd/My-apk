@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:id="@+id/image_profile"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_name"
+                android:layout_gravity="center_vertical"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="UserName"
+                android:textColor="@color/colorAccent"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_image"
+            android:src="@mipmap/ic_launcher"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:padding="8dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_post_like"
+                android:id="@+id/post_like"/>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_comment"
+                android:id="@+id/post_comment"
+                android:layout_toEndOf="@id/post_like"
+                android:layout_marginStart="10dp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/post_save"
+                android:src="@drawable/ic_post_save"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 like"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+            android:id="@+id/likes"
+            android:textColor="@color/colorAccent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+            android:id="@+id/publisher" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="descriptin"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+            android:id="@+id/comment" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View all 20 comments"
+            android:layout_marginStart="8dp"
+            android:id="@+id/description"/>
+    </LinearLayout>
+
+</RelativeLayout>

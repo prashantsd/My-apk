@@ -28,8 +28,8 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         bottomNavigationView = findViewById(R.id.Bottom_navigation);
-       bottomNavigationView.setOnNavigationItemSelectedListener(bottom_click);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+        bottomNavigationView.setOnNavigationItemSelectedListener(bottom_click);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
 
     }
 
@@ -37,7 +37,7 @@ public class HomePageActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-            switch (menuItem.getItemId()){
+            switch (menuItem.getItemId()) {
                 case R.id.nav_home:
                     FG = new HomeFragment();
                     break;
@@ -46,20 +46,20 @@ public class HomePageActivity extends AppCompatActivity {
                     break;
                 case R.id.nav_add_post:
                     FG = null;
-                    startActivity(new Intent(HomePageActivity.this,PostActivity.class));
+                    startActivity(new Intent(HomePageActivity.this, PostActivity.class));
                     break;
                 case R.id.nav_like:
                     FG = new likeFragment();
                     break;
                 case R.id.nav_profile:
-                    SharedPreferences.Editor editor = getSharedPreferences("PRA",MODE_PRIVATE).edit();
-                    editor.putString("profileid",FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    SharedPreferences.Editor editor = getSharedPreferences("PRA", MODE_PRIVATE).edit();
+                    editor.putString("profileid", FirebaseAuth.getInstance().getCurrentUser().getUid());
                     editor.apply();
                     FG = new ProfileFragment();
                     break;
             }
 
-            if (FG != null){
+            if (FG != null) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         FG).commit();
             }
